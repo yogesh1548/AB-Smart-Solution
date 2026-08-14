@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — AB Smart Solution</title>
+<meta name="description" content="Get in touch with AB Smart Solution for academic project help, thesis support, data analysis, CVs, and more.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo"><span class="mark">AB</span> Smart Solution</a>
+    <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')">MENU</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Contact Us</span>
+    <h1>Have a project in mind? Let's get started.</h1>
+    <p>Need help with your project, thesis, research proposal, data analysis, CV, resume, or academic document? Tell us what you need and our team will guide you toward the right service.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container two-col">
+    <div>
+      <span class="eyebrow">Send Your Requirement</span>
+      <h2 style="font-size:1.5rem; margin-bottom:1em;">Tell us about your project</h2>
+      <form class="contact-form" onsubmit="return handleSubmit(event)">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone / WhatsApp</label>
+            <input id="phone" name="phone" type="tel" placeholder="98XXXXXXXX" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="service">Service needed</label>
+          <select id="service" name="service">
+            <option>Project &amp; Thesis Support</option>
+            <option>Research Proposal Guidance</option>
+            <option>SPSS &amp; Excel Data Analysis</option>
+            <option>Questionnaire &amp; Literature Review Support</option>
+            <option>Proofreading &amp; Formatting</option>
+            <option>Presentation &amp; Viva Preparation</option>
+            <option>CV &amp; Resume Writing</option>
+            <option>Cover Letter Writing</option>
+            <option>LinkedIn Profile Support</option>
+            <option>Personal Statement / SOP Support</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Your requirement</label>
+          <textarea id="message" name="message" placeholder="Tell us about your program, deadline, and what you need help with."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:fit-content;">Send requirement</button>
+        <p class="form-note" id="formNote">This form is a template — connect it to your email or WhatsApp number to start receiving requests.</p>
+      </form>
+    </div>
+
+    <div>
+      <span class="eyebrow">Reach Us Directly</span>
+      <div class="contact-info" style="margin-top:1em;">
+        <div class="info-block">
+          <span class="ic">📞</span>
+          <div>
+            <h4>Call / WhatsApp</h4>
+            <p>[Your Phone Number]</p>
+            <span class="placeholder-note">← replace with your number</span>
+          </div>
+        </div>
+        <div class="info-block">
+          <span class="ic">📧</span>
+          <div>
+            <h4>Email</h4>
+            <p>[Your Email Address]</p>
+            <span class="placeholder-note">← replace with your email</span>
+          </div>
+        </div>
+        <div class="info-block">
+          <span class="ic">📍</span>
+          <div>
+            <h4>Location</h4>
+            <p>Nepal</p>
+          </div>
+        </div>
+        <div class="info-block">
+          <span class="ic">🕐</span>
+          <div>
+            <h4>Service Availability</h4>
+            <p>24 hours</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-panel" style="margin-top:34px; box-shadow:6px 6px 0 var(--paper-dim);">
+        <h3>Why wait?</h3>
+        <p style="color:var(--charcoal-soft); font-size:.95rem; margin-bottom:0;">Your academic or career goal starts with the right guidance. Contact us today and take the next step with AB Smart Solution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo"><span class="mark" style="color:var(--marigold);">AB</span> Smart Solution</div>
+        <p>Academic and technical support for bachelor's and master's students in Nepal. Learn better. Write better. Present better.</p>
+        <span class="availability-badge"><span class="dot"></span> Available 24 hours</span>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>📞 Add your phone / WhatsApp</li>
+          <li>📧 Add your email address</li>
+          <li>📍 Nepal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 AB Smart Solution. Established Kartik 09, 2082 B.S.</span>
+      <span>Your Academic Journey, Our Professional Support.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  const note = document.getElementById('formNote');
+  note.textContent = "Thanks — this is a template form. Wire it up to your email/WhatsApp to start receiving real submissions.";
+  note.style.color = "var(--teal)";
+  return false;
+}
+</script>
+
+</body>
+</html>

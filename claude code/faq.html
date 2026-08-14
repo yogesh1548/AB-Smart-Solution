@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — AB Smart Solution</title>
+<meta name="description" content="Frequently asked questions about AB Smart Solution's academic and technical support services for students in Nepal.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo"><span class="mark">AB</span> Smart Solution</a>
+    <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')">MENU</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Frequently Asked Questions</span>
+    <h1>Answers before you ask.</h1>
+    <p>Everything students usually want to know before getting started — from topic selection to confidentiality.</p>
+  </div>
+</section>
+
+<section style="padding-top:48px;">
+  <div class="container">
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <div>
+      <h2>Still have questions?</h2>
+      <p>Send us your requirement, and our team will guide you toward the right service.</p>
+    </div>
+    <a href="contact.html" class="btn btn-primary" style="border-color:var(--ink);">Ask us directly</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo"><span class="mark" style="color:var(--marigold);">AB</span> Smart Solution</div>
+        <p>Academic and technical support for bachelor's and master's students in Nepal. Learn better. Write better. Present better.</p>
+        <span class="availability-badge"><span class="dot"></span> Available 24 hours</span>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>📞 Add your phone / WhatsApp</li>
+          <li>📧 Add your email address</li>
+          <li>📍 Nepal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 AB Smart Solution. Established Kartik 09, 2082 B.S.</span>
+      <span>Your Academic Journey, Our Professional Support.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const faqs = [
+  ["What is AB Smart Solution?","AB Smart Solution provides academic, research, technical writing, career document, and academic guidance services for bachelor's and master's students in Nepal."],
+  ["Who can use your services?","Our services are available for students and individuals who need support with academic projects, theses, proposals, reports, research work, CVs, resumes, cover letters, and related documents."],
+  ["Do you provide help with thesis and project work?","Yes. We provide structured guidance and support for topic selection, research proposals, literature reviews, methodology, data analysis, report preparation, formatting, presentations, and thesis defense preparation."],
+  ["Do you provide online services?","Yes. Most of our services can be provided online, making it convenient for students from different locations. Offline support may also be available where applicable."],
+  ["Can you help me choose a research topic?","Yes. We can discuss your subject, interests, academic requirements, and research area to help you identify a suitable and practical topic."],
+  ["Do you provide SPSS and Excel support?","Yes. We provide guidance for data entry, data organization, descriptive statistics, reliability analysis, correlation, regression, charts, tables, and interpretation using SPSS and Excel."],
+  ["Can you help me prepare a questionnaire?","Yes. We can help develop a structured questionnaire based on your research objectives, variables, research questions, and target respondents."],
+  ["Do you provide literature review support?","Yes. We help students understand, organize, compare, and present relevant academic literature with appropriate citations and references."],
+  ["Can you format my document according to university guidelines?","Yes. We can help with headings, spacing, margins, page numbering, tables, figures, citations, references, and other formatting requirements according to the applicable guidelines."],
+  ["Do you provide CV, resume, and cover letter services?","Yes. We prepare and improve professional CVs, resumes, cover letters, LinkedIn profiles, and personal statements/SOPs according to your career or application needs."],
+  ["Can you improve AI-assisted or poorly written academic content?","Yes. We provide academic writing improvement, including language correction, paraphrasing, rewriting, academic tone improvement, citation improvement, and originality checking."],
+  ["Do you guarantee 100% plagiarism-free or AI-undetectable content?","No. We do not make unrealistic guarantees such as \u201c100% AI removal\u201d or \u201cAI detector bypass.\u201d Instead, we focus on original expression, proper citation, academic quality, and responsible writing improvement."],
+  ["Is my information kept confidential?","We respect the privacy and confidentiality of our clients and their academic materials. We handle submitted documents responsibly and professionally."],
+  ["How can I get started?","Simply contact AB Smart Solution and tell us about your academic or career requirement. Our team will discuss your needs and explain the appropriate support."],
+  ["Do you provide support after delivering the work?","Yes. We provide reasonable guidance and support so that you can understand your document, make necessary improvements, and prepare for presentations or academic discussions."]
+];
+
+const list = document.getElementById('faqList');
+faqs.forEach((f, i) => {
+  const item = document.createElement('div');
+  item.className = 'faq-item';
+  const num = String(i+1).padStart(2,'0');
+  item.innerHTML = `
+    <button class="faq-q" aria-expanded="false">
+      <span><span class="num">${num}</span>${f[0]}</span>
+      <span class="plus">+</span>
+    </button>
+    <div class="faq-a"><p>${f[1]}</p></div>
+  `;
+  list.appendChild(item);
+
+  const btn = item.querySelector('.faq-q');
+  const ans = item.querySelector('.faq-a');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => {
+      o.classList.remove('open');
+      o.querySelector('.faq-a').style.maxHeight = null;
+      o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if (!isOpen){
+      item.classList.add('open');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded','true');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
